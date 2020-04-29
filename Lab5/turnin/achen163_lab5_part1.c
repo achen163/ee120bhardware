@@ -48,6 +48,7 @@ unsigned char tmpC = 0x00;
     if (tmpA <=4) {
 	tmpC = tmpC + 0x40;
     }
+    PORTC = tmpC;
     }
     return 1;
 }
