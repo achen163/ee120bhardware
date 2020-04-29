@@ -22,7 +22,7 @@ unsigned char tmpA = 0x00;
 unsigned char tmpC = 0x00;
     /* Insert your solution below */
     while (1) {
-	tmpA = ~PINA & 0x3F;
+	tmpA = ~PINA & 0x0F;
 	tmpC = 0x00;
     
     if (tmpA > 0){
