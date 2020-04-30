@@ -1,7 +1,8 @@
 /*	Author: Alex Chen
  *  Partner(s) Name: 
  *	Lab Section: 22
- *	Assignment: Lab #5  Exercise #2
+ *	Assignment: Lab #5  Exercise #3
+ *	Video Link: https://drive.google.com/open?id=1-8s9Qh2_dCHqfqRhMzFsIufLkKt1RyNi
  *	Exercise Description: [optional - include for your own benefit]
  *
  *	I acknowledge all content contained herein, excluding template or example
@@ -57,11 +58,11 @@ void Tick() {
 				tempC = tempC * 2;
 					
 			}
-		 	else if (numCount < 13) {
+		 	else if (numCount < 14) {
 				tempC = tempC / 2;
 			}
-			else {
-				numCount = 0;
+			if (numCount ==14){
+				numCount = -1;
 			}
 			numCount++;
 			break;
@@ -84,7 +85,7 @@ state = Start;
     /* Insert your solution below */
     while (1) {
 	tempA = ~PINA ;
-    	Tick();
+	Tick();
 	PORTC = tempC;
     }
     return 1;

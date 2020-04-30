@@ -1,8 +1,9 @@
-/*	Author: lab
+/*	Author: Alex Chen
  *  Partner(s) Name: 
- *	Lab Section:
- *	Assignment: Lab #  Exercise #
+ *	Lab Section:22
+ *	Assignment: Lab #5  Exercise #1
  *	Exercise Description: [optional - include for your own benefit]
+ *	Video Link:https://drive.google.com/open?id=1-8s9Qh2_dCHqfqRhMzFsIufLkKt1RyNi
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.

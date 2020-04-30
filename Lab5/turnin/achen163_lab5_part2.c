@@ -2,6 +2,7 @@
  *  Partner(s) Name: 
  *	Lab Section: 22
  *	Assignment: Lab #5  Exercise #2
+ *	Video Link: https://drive.google.com/open?id=1-8s9Qh2_dCHqfqRhMzFsIufLkKt1RyNi
  *	Exercise Description: [optional - include for your own benefit]
  *
  *	I acknowledge all content contained herein, excluding template or example
