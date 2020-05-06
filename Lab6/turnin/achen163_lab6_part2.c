@@ -48,26 +48,27 @@ void tick() {
 			}
 			break;
 		case press: 
-			if ((tmpA & 0x01) == 0x01) {
-				state = press;
+			if( count < 1) {
+				if ((tmpA & 0x01) == 0x00) {
+					state = release;
+				}
+			}
+			else if (count ==1) {
+				count = 0;
+				state = light0;
 			}
 			else{
-				state = release;
+				state = press;
 			}
 			break;
 
 		case release:
-			if( count < 1) {
-				if ((tmpA & 0x01) == 0x01) {
-					state = press;
-					count++;
-				}
+			if ((tmpA & 0x01) == 0x01) {
+				state = press;
+				count++;		
 			}
-			else if (count ==1) {
-				if ((tmpA & 0x01)==0x00 ) {
-					state = light0;
-				}
-			}
+
+		
 			else {
 				state = release;	
 			}
