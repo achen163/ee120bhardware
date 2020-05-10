@@ -54,19 +54,17 @@ void tick() {
                         else {
                                 state = NonePressed;
                         }
+			counter++;
 			break;
 		case Wait1:
-		        if (counter > 9){
-				if ((tempA & 0x03) == 0x03) {
-					state = BothPressed;
-				}
-				else if ((tempA & 0x01) == 0x01) {
-					state = PA0Pressed;
-				}
-				else if ((tempA & 0x03) == 0x00){
-					state = NonePressed;
-				}
-				counter = 0;
+			if ((tempA & 0x03) == 0x03) {
+				state = BothPressed;
+			}
+			else if ((tempA & 0x01) == 0x01) {
+				state = PA0Pressed;
+			}
+			else if ((tempA & 0x03) == 0x00){
+				state = NonePressed;
 			}
 			else {
 				state = Wait1;
@@ -74,17 +72,14 @@ void tick() {
 			counter++;
 			break;
 		case Wait2:
-			if (counter > 9) {
-				if ((tempA & 0x03) == 0x03) {
-					state = BothPressed;
-				}
-				else if ((tempA & 0x02) == 0x02) {
-					state = PA1Pressed;	
-				}
-				else if ((tempA & 0x03) == 0x00){
-					state = NonePressed;
-				}
-				counter = 0;
+			if ((tempA & 0x03) == 0x03) {
+				state = BothPressed;
+			}
+			else if ((tempA & 0x02) == 0x02) {
+				state = PA1Pressed;	
+			}
+			else if ((tempA & 0x03) == 0x00){
+				state = NonePressed;
 			}
 			else {
 				state = Wait2;
@@ -104,8 +99,10 @@ void tick() {
 			else {
 				state = NonePressed;
 			}
+			counter++;
 			break;
 		case BothPressed:
+			counter =0;
 			if ((tempA & 0x03) ==0x03) {
 				state = BothPressed;
 			}
@@ -131,24 +128,30 @@ void tick() {
 			break;
 		case PA0Pressed:
 			tempB = PORTB;
-			if (PORTB < 9) {
-				PORTB = tempB + 1;
+			if (tempB < 9) {
+				tempB = tempB + 1;
 			}
 			else {
-				PORTB = 9;
+				tempB = 9;
 			}
 			break;
 		case Wait1:
+			if ((tempB < 9) && (counter % 10 == 0)) {
+				tempB++;
+			}
 			break;
 		case Wait2:
+			if ((tempB > 0) && (counter % 10 ==0 )) {
+				tempB--;
+			}
 			break;
 		case PA1Pressed:
 			tempB = PORTB;
-			if (PORTB > 0) {
-				PORTB = tempB - 1;
+			if (tempB > 0) {
+				tempB = tempB - 1;
 			}
 			else {
-				PORTB = 0;
+				tempB = 0;
 			}
 			break;
 		case BothPressed:
@@ -172,6 +175,7 @@ int main(void) {
     while (1){
 	tempA = ~PINA & 0x03;
 	tick();
+	PORTB = tempB;
 	while (!TimerFlag);
 	TimerFlag = 0;
     }
