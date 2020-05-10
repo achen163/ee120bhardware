@@ -107,7 +107,7 @@ void tick() {
 			break;
 		case BothPressed:
 			if ((tempA & 0x03) ==0x03) {
-
+				state = BothPressed;
 			}
 			else if ((tempA & 0x01) == 0x01) {
 				state = PA0Pressed;
@@ -126,7 +126,6 @@ void tick() {
 
 	switch (state) {
 		case Start:
-			PORTB = 0x07;
 			break;
 		case NonePressed:
 			break;
