@@ -138,12 +138,12 @@ void tick() {
 			}
 			break;
 		case Wait1:
-			if ((tempB < 9) && (counter % 10 == 0)) {
+			if ((tempB < 9) && (counter % 11 == 0)) {
 				tempB++;
 			}
 			break;
 		case Wait2:
-			if ((tempB > 0) && (counter % 10 ==0 )) {
+			if ((tempB > 0) && (counter % 11 ==0 )) {
 				tempB--;
 			}
 			break;
