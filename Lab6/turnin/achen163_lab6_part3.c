@@ -134,6 +134,9 @@ void tick() {
 			if (PORTB < 9) {
 				PORTB = tempB + 1;
 			}
+			else {
+				PORTB = 9;
+			}
 			break;
 		case Wait1:
 			break;
@@ -144,7 +147,9 @@ void tick() {
 			if (PORTB > 0) {
 				PORTB = tempB - 1;
 			}
-			
+			else {
+				PORTB = 0;
+			}
 			break;
 		case BothPressed:
 			PORTB = 0x00;
