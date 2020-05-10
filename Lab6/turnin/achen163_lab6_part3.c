@@ -140,12 +140,11 @@ void tick() {
 		case Wait2:
 			break;
 		case PA1Pressed:
+			tempB = PORTB;
 			if (PORTB > 0) {
-				PORTB = PORTB - 1;
+				PORTB = tempB - 1;
 			}
-			else {
-				PORTB = 0;
-			}
+			
 			break;
 		case BothPressed:
 			PORTB = 0x00;
