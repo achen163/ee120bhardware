@@ -88,8 +88,8 @@ void tick() {
 			}
 			else {
 				state = Wait2;
-				counter++;
 			}
+			counter++;
 			break;
 		case PA1Pressed:
 			if ((tempA & 0x03) == 0x03) {
