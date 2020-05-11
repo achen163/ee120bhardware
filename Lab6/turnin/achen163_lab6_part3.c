@@ -60,21 +60,25 @@ void tick() {
 		case Wait1:
 			if ((tempA & 0x03) == 0x03) {
 				state = BothPressed;
+				counter = 0;
 			}
 			else if ((tempA & 0x01) == 0x01) {
 				state = Wait1;
+				counter++;
 			}
 			else if ((tempA & 0x03) == 0x00){
 				state = NonePressed;
+				counter = 0;
 			}
 			else {
 				state = Wait1;
 			}
-			counter++;
+			
 			break;
 		case Wait2:
 			if ((tempA & 0x03) == 0x03) {
 				state = BothPressed;
+				counter = 0;
 			}
 			else if ((tempA & 0x02) == 0x02) {
 				state = Wait2;
@@ -82,6 +86,7 @@ void tick() {
 			}
 			else if ((tempA & 0x03) == 0x00){
 				state = NonePressed;
+				counter = 0;
 			}
 			else {
 				state = Wait2;
