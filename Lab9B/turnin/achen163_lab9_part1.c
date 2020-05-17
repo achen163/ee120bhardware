@@ -101,6 +101,7 @@ void Tick() {
 			break;
 		default:
 			state = NonePressed;
+			break;
 	}
 	switch(state) {
 		case Start:
